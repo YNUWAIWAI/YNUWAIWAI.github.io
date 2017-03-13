@@ -17,7 +17,7 @@ git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
 rm -vrf ./*
 
 cp -v ../deploy_key.enc .
-cp -vr ../_site/hp/* .
+cp -vr ../_site/* .
 
 # If there are no changes to the compiled out (e.g. this is a README update) then just bail.
 if [ -z $(git diff --exit-code) ]; then

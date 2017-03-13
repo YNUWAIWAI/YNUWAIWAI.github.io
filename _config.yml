@@ -1,6 +1,6 @@
 source: ./src
-destination: ./_site/hp
-baseurl: /hp
+destination: ./_site
+baseurl: /
 markdown: kramdown
 exclude:
   - vendor
