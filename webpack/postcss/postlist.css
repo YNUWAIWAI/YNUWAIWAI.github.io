@@ -1,0 +1,30 @@
+/** @define postlist */
+.postlist {
+  width: 100%;
+
+  &--item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    list-style-type: none;
+
+    &Title {
+      font-size: 1.5rem;
+      padding: 1rem;
+    }
+
+    &Time {
+      flex: 1 0 12rem;
+      padding: 0 1rem;
+      text-align: right;
+    }
+
+    &Excerpt {
+      padding: 1rem;
+    }
+  }
+
+  &--flex {
+    align-items: baseline;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+}

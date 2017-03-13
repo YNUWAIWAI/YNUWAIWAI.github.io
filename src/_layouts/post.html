@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+<body>
+  <div class="util--flexContainer util--flex__row util--background__color">
+    {% include header/header.html %}
+    {% include sidenav.html %}
+    <main class="content util--flexItem util--zindex__0">
+      {% include post.html %}
+    </main>
+    {% include footer.html %}
+  </div>
+  {% include script.html %}
+</body>
+</html>

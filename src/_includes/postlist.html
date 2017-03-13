@@ -1,0 +1,13 @@
+<ul class="postlist">
+  {% for post in site.posts %}
+    <li class="postlist--item">
+      <a href="{{ post.url | prepend: site.baseurl }}">
+        <div class="util--inlineFlexContainer postlist--flex">
+          <span class="postlist--itemTitle util--inlineFlexItem">{{ post.title }}</span>
+          <span class="postlist--itemTime util--inlineFlexItem"><time>{{ post.date | date: "%F %T" }}</time></span>
+        </div>
+        <div class="postlist--itemExcerpt">{{ post.excerpt | remove: '<p>' | remove: '</p>' | truncatewords:30 }}</div>
+      </a>
+    </li>
+  {% endfor %}
+</ul>

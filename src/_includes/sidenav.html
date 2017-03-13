@@ -1,0 +1,7 @@
+<div class="sidenav util--flexItem util--background__color">
+  <ul class="sidenav--list  util--card__color util--shadow">
+    {% for link in site.data.link %}
+      <li><a class="sidenav--item" href={{ link.url | prepend: site.baseurl}}>{{ link.name }}</a></li>
+    {% endfor %}
+  </ul>
+</div>

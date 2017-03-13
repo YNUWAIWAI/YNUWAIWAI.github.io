@@ -1,0 +1,8 @@
+source: ./src
+destination: ./_site/hp
+baseurl: /hp
+markdown: kramdown
+exclude:
+  - vendor
+  - deploy_key
+permalink: /post/:title.html

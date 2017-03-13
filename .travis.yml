@@ -1,0 +1,40 @@
+language: ruby
+rvm:
+- 2.4.0
+sudo: false
+cache:
+  bundler: true
+  yarn: true
+  directories:
+    - node_modules
+
+before_install:
+  - nvm install 7
+  - curl -o- -L https://yarnpkg.com/install.sh | bash
+
+branches:
+  only:
+    - gh-pages
+    - master
+
+env:
+  global:
+    - NOKOGIRI_USE_SYSTEM_LIBRARIES: true
+    - JEKYLL_ENV: "production"
+    - SOURCE_BRANCH: "master"
+    - TARGET_BRANCH: "gh-pages"
+    - COMMIT_AUTHOR_EMAIL: "nimius.rd@gmail.com"
+    - ENCRYPTION_LABEL: 42792a9386ff
+
+before_script:
+  - chmod -vR +x tools/deploy.sh
+  - export PATH="$HOME/.yarn/bin:$PATH"
+  - yarn
+
+script:
+  - yarn test
+  - yarn build:production
+  - bundle exec htmlproofer ./_site --assume-extension
+
+after_success:
+  - ./tools/deploy.sh

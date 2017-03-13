@@ -1,0 +1,18 @@
+/** @define sidenav */
+.sidenav {
+  flex: 1 0 0%;
+  margin: 1rem;
+  order: 3;
+
+  &--item {
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+    display: block;
+    font-size: 1.5rem;
+    padding: 1rem 0 1rem 1rem;
+    text-align: center;
+  }
+
+  @media ( --tablet ) {
+    display: none;
+  }
+}

@@ -1,0 +1,33 @@
+/** @define lead */
+.lead {
+  max-width: 100vw;
+  order: 2;
+  text-align: center;
+  width: 100%;
+
+  &--img {
+    font-size: 10rem;
+
+    @media ( --tablet ) {
+      font-size: 6.5rem;
+    }
+
+    @media ( --mobileL ) {
+      font-size: 5rem;
+    }
+
+    @media ( --mobileM ) {
+      font-size: 4rem;
+    }
+
+    @media ( --mobileS ) {
+      font-size: 3rem;
+    }
+  }
+
+  &--text {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 1rem;
+    padding: 1rem;
+  }
+}

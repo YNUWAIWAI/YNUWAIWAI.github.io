@@ -1,0 +1,78 @@
+/** @define navbar */
+:root {
+  --navbar-font-size: 1.5rem;
+  --navbar-height: 3.1rem;
+  --navbar-padding: 0.8rem;
+}
+
+.navbar {
+  max-height: var(--navbar-height);
+  max-width: 100%;
+
+  &__order {
+    order: 1;
+  }
+
+  &--flex {
+    flex-flow: row wrap;
+  }
+}
+
+/** @define drawerToggle */
+.drawerToggle {
+  flex: 0;
+  max-height: var(--navbar-height);
+
+  &--button {
+    font-size: var(--navbar-font-size);
+    font-weight: 900;
+    max-height: var(--navbar-height);
+    padding: var(--navbar-padding);
+    text-align: center;
+  }
+
+  &--icon {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+
+  @media ( --desktop ) {
+    display: none;
+  }
+}
+
+/** @define title */
+.title {
+  flex: 2 1;
+
+  &--text {
+    font-size: var(--navbar-font-size);
+    font-weight: 900;
+    padding: var(--navbar-padding);
+    text-align: center;
+
+    @media ( --tablet ) {
+      text-align: left;
+    }
+  }
+}
+
+/** @define linkList */
+.linkList {
+  flex: 3 1;
+
+  &--flex {
+    justify-content: space-around;
+  }
+
+  &--item {
+    font-size: var(--navbar-font-size);
+    font-weight: 900;
+    padding: var(--navbar-padding);
+    text-align: center;
+  }
+
+  @media ( --tablet ) {
+    display: none;
+  }
+}

@@ -1,0 +1,15 @@
+/** @define content */
+.content {
+  flex: 2 1 0%;
+  margin: 1rem;
+  min-height: calc(100vh - 8.2rem);
+  order: 4;
+
+  &--card {
+    padding: 1rem;
+  }
+
+  @media ( --mobileL ) {
+    margin: 0;
+  }
+}

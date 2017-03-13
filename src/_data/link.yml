@@ -1,0 +1,11 @@
+- name: Home
+  url: /
+
+- name: News
+  url: /news
+
+- name: Contact
+  url: /contact
+
+- name: About
+  url: /about

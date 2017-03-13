@@ -1,0 +1,7 @@
+/** @define footer */
+.footer {
+  color: white;
+  min-height: 3.1rem;
+  order: 6;
+  width: 100%;
+}

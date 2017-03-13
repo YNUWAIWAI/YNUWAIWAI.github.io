@@ -1,0 +1,11 @@
+<article class="post util--shadow util--card__color">
+  <header>
+    <span class="post--title util--inlineFlexItem">{{ page.title }}</span>
+  </header>
+  <div>
+    {{ content }}
+  </div>
+  <footer class="post--footer">
+    posted at <time>{{ page.date | date: "%F %T" }}</time>
+  </footer>
+</article>
