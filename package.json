@@ -33,7 +33,6 @@
     "js-beautify": "^1.6.11",
     "npm-run-all": "^3.1.1",
     "postcss-apply": "^0.4.0",
-    "postcss-autoreset": "^1.2.1",
     "postcss-custom-media": "^5.0.1",
     "postcss-custom-properties": "^5.0.1",
     "postcss-font-smoothing": "^0.1.0",

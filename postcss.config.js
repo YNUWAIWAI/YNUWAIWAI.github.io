@@ -44,13 +44,6 @@ module.exports = {
     'postcss-initial': {},
     'postcss-nesting': {},
     // NOTE: Don't change the order below.
-    // 'postcss-autoreset': {
-    //   reset: {
-    //     padding: 0,
-    //     margin: 0,
-    //     borderRadius: 0
-    //   }
-    // },
     'cssnano': cssnanoOption(),
   }
 };
