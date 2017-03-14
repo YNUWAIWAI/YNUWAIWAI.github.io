@@ -1,7 +1,7 @@
 _site
 .sass-cache
 .jekyll-metadata
-deploy_key
+github_deploy_key
 src/assets
 
 # Logs

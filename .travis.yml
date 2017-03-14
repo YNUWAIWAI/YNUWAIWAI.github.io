@@ -6,35 +6,35 @@ cache:
   bundler: true
   yarn: true
   directories:
-    - node_modules
-
+  - node_modules
 before_install:
-  - nvm install 7
-  - curl -o- -L https://yarnpkg.com/install.sh | bash
-
+- nvm install 7
+- curl -o- -L https://yarnpkg.com/install.sh | bash
 branches:
   only:
-    - gh-pages
-    - master
-
+  - src
+  - master
 env:
   global:
-    - NOKOGIRI_USE_SYSTEM_LIBRARIES: true
-    - JEKYLL_ENV: "production"
-    - SOURCE_BRANCH: "master"
-    - TARGET_BRANCH: "gh-pages"
-    - COMMIT_AUTHOR_EMAIL: "nimius.rd@gmail.com"
-    - ENCRYPTION_LABEL: 42792a9386ff
-
+  - NOKOGIRI_USE_SYSTEM_LIBRARIES: true
+  - SOURCE_BRANCH: src
+  - TARGET_BRANCH: master
+  - secure: TG1nXeIBEsAT2SJZV/RoBg4u744G8iHx+SHZzuooAz47XE/eyu4LaBtUdjkQo1mfVL1NgsnrRrf6zDajxQLIJs6Yu4kKhLTu5XFtRVv6KEkyy9bccx/zxaSsaU1aFaYfhvWpQxiRfWz8Pfpp+b1MguJEzeWcmEt3LxSQ0own3kVVFc2YMZd5hUARJPHW4ZOoKPbTNzuw/gbSlZTpo25AnHrFkpY2dMPfPBIjpL5Ex+pg6RL6HPoff+WREvtm/LSn6q4NE+1+S/E4VyHvqaEz8TIpAZEw+qjOFtlsheEUNCDdF1nSWVmDiZ0GWVJAwDm5/H7+wj2qQBm5G0WKCSDqhvssXOxohYbJcQyliUhHH23ci8Sz8JCDpclo5PKXhgS6DnyeL4/S8jMYAEUeXJU/u/ch9exBSCYjs4UyjiVX/+YeT7mYPmywoup4OuSy1FnUt7POOqwlfaw4Ech+QP65ihRsBB4MSONpo69Btboom44kEjmBkmMGzhth/w2J3Jwn3hzC+oYjt8jYpugKupEOrqu4/JeUcINDP8QvuzD43zoxV09f/JVL9V/JQMjqKqDHanUnjIz13ldvxeDRUyuuZhZ5EdG3m1ZUXEh0e5FsHS29UK2A6reSz3Q4uRzPUG2Phlv3CNFCp4bz+eU0+xTq6qv333R0kMmX7UbQX0WcO2Q=
 before_script:
-  - chmod -vR +x tools/deploy.sh
   - export PATH="$HOME/.yarn/bin:$PATH"
   - yarn
-
 script:
   - yarn test
   - yarn build:production
   - bundle exec htmlproofer ./_site --assume-extension
-
 after_success:
-  - ./tools/deploy.sh
+  - |
+
+    $(npm bin)/set-up-ssh --key "$encrypted_f86046f9ff72_key" \
+                          --iv "$encrypted_f86046f9ff72_iv" \
+                          --path-encrypted-key "github_deploy_key.enc"
+    $(npm bin)/update-branch --commands "yarn build:production" \
+                             --commit-message "Update" \
+                             --directory "_site" \
+                             --distribution-branch "master" \
+                             --source-branch "src"
