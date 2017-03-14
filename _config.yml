@@ -1,6 +1,6 @@
 source: ./src
 destination: ./_site
-baseurl: /
+baseurl: ""
 markdown: kramdown
 exclude:
   - vendor
