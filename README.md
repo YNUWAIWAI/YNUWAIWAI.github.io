@@ -1,12 +1,12 @@
-# hp(kari) [![Build Status](https://travis-ci.org/nimiusrd/hp.svg?branch=master)](https://travis-ci.org/nimiusrd/hp)
+# hp(kari) [![Build Status](https://travis-ci.org/YNUWAIWAI/YNUWAIWAI.github.io.svg?branch=master)](https://travis-ci.org/YNUWAIWAI/YNUWAIWAI.github.io)
 
 ----
-- [ディレクトリ構造](https://github.com/nimiusrd/hp#ディレクトリ構造)
-- [開発準備](https://github.com/nimiusrd/hp#開発準備)
- - [Mac OSX or Linux](https://github.com/nimiusrd/hp#mac-osx-or-linux)
- - [Windows](https://github.com/nimiusrd/hp#windows)
-- [ツール](https://github.com/nimiusrd/hp#ツール予定)
-- [FAQ](https://github.com/nimiusrd/hp#ツール予定)
+- [ディレクトリ構造](https://github.com/YNUWAIWAI/YNUWAIWAI.github.io#ディレクトリ構造)
+- [開発準備](https://github.com/YNUWAIWAI/YNUWAIWAI.github.io#開発準備)
+ - [Mac OSX or Linux](https://github.com/YNUWAIWAI/YNUWAIWAI.github.io#mac-osx-or-linux)
+ - Windows
+- [ツール](https://github.com/YNUWAIWAI/YNUWAIWAI.github.io#ツール)
+- [FAQ](https://github.com/YNUWAIWAI/YNUWAIWAI.github.io#FAQ)
 
 ----
 
@@ -46,7 +46,7 @@
 │   ├── js/
 │   └── postcss/
 ├── webpack.config.js   # Webpackの設定ファイル
-└── yarn.lock           # 実際にインストールしたoonde_modulesのバージョン
+└── yarn.lock           # 実際にインストールしたnode_modulesのバージョン
 ```
 
 # 開発準備
@@ -63,7 +63,7 @@ $ ./start.sh
 ### このリポジトリをローカルにコピーする。
 
 ```bash
-$ git clone git@github.com:nimiusrd/hp.git
+$ git clone git@github.com:YNUWAIWAI/YNUWAIWAI.github.io.git
 ```
 
 ### Rubyをインストールする。
