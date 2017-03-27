@@ -131,7 +131,7 @@ $ yarn test
 $ cd path/to/repo
 $ yarn start
 ```
-<http://127.0.0.1:4000/hp/>を開く
+<http://127.0.0.1:4000/>を開く
 
 # ツール
 
