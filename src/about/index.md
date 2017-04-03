@@ -5,4 +5,4 @@ layout: default
 permalink: /about
 ---
 
-WAIWAIしています。
+我々、YNUWAIWAIは人工知能とウェブアプリを楽しくやりたい人が集まったサークルです。
