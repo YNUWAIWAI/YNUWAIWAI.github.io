@@ -56,7 +56,7 @@
 ```bash
 $ ./start.sh
 ```
-`tools/Dockerfile`により`nimiusrd/hp`というDockerイメージが作られ、続けてDockerコンテナが作られる。
+`tools/Dockerfile`により`ynuwaiwai/hp`というDockerイメージが作られ、続けてDockerコンテナが作られる。
 
 ## Mac OSX or Linux
 
