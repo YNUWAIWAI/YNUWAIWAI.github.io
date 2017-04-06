@@ -17,11 +17,6 @@
 }
 /* stylelint-enable selector-no-universal */
 
-a {
-  color: black;
-  text-decoration: none;
-}
-
 li {
   list-style-type: none;
 }

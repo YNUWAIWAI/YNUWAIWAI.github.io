@@ -1,7 +1,7 @@
 <ul class="postlist">
   {% for post in site.posts %}
-    <li class="postlist--item">
-      <a href="{{ post.url | prepend: site.baseurl }}">
+    <li>
+      <a class="postlist--item" href="{{ post.url | prepend: site.baseurl }}">
         <div class="util--inlineFlexContainer postlist--flex">
           <span class="postlist--itemTitle util--inlineFlexItem">{{ post.title }}</span>
           <span class="postlist--itemTime util--inlineFlexItem"><time>{{ post.date | date: "%F %T" }}</time></span>

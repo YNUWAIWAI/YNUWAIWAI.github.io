@@ -70,6 +70,7 @@
     font-weight: 900;
     padding: var(--navbar-padding);
     text-align: center;
+    text-decoration: none;
   }
 
   @media ( --tablet ) {
