@@ -172,8 +172,23 @@ ul, ol {
         content: counters(section, '.') '. ';
       }
     }
-    }
 
+    & table {
+      border-collapse: collapse;
+      display: block;
+      width: 100%;
+      overflow: auto;
+
+      & th,
+      & td {
+        border: 1px solid #9e9e9e;
+        padding: 0.5rem;
+      }
+
+      & th {
+        font-weight: 600;
+      }
+    }
     /* stylelint-enable selector-no-type,plugin/selector-bem-pattern */
   }
 }
