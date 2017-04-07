@@ -150,6 +150,16 @@ li {
     & strong {
       font-weight: bold;
     }
+
+    & ul,
+    & ol {
+      padding-left: 1rem;
+
+      & li {
+        list-style-type: disc;
+      }
+    }
+
     /* stylelint-enable selector-no-type,plugin/selector-bem-pattern */
   }
 }
