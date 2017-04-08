@@ -1,14 +1,4 @@
-# hp(kari) [![Build Status](https://travis-ci.org/YNUWAIWAI/YNUWAIWAI.github.io.svg?branch=master)](https://travis-ci.org/YNUWAIWAI/YNUWAIWAI.github.io)
-
-----
-- [ディレクトリ構造](https://github.com/YNUWAIWAI/YNUWAIWAI.github.io#ディレクトリ構造)
-- [開発準備](https://github.com/YNUWAIWAI/YNUWAIWAI.github.io#開発準備)
- - [Mac OSX or Linux](https://github.com/YNUWAIWAI/YNUWAIWAI.github.io#mac-osx-or-linux)
- - Windows
-- [ツール](https://github.com/YNUWAIWAI/YNUWAIWAI.github.io#ツール)
-- [FAQ](https://github.com/YNUWAIWAI/YNUWAIWAI.github.io#FAQ)
-
-----
+# YNUWAIWAIのホームページ [![Build Status](https://travis-ci.org/YNUWAIWAI/YNUWAIWAI.github.io.svg?branch=src)](https://travis-ci.org/YNUWAIWAI/YNUWAIWAI.github.io)
 
 # ディレクトリ構造
 
@@ -42,7 +32,6 @@
 ├── tools/              # シェルスクリプトなど
 ├── webpack/            # Webpackでビルドされるファイル
 │   ├── entry.js
-│   ├── entry2.js
 │   ├── js/
 │   └── postcss/
 ├── webpack.config.js   # Webpackの設定ファイル
@@ -149,12 +138,6 @@ GitHub Pagesなどもっとも広く利用されている静的コンテンツ�
 
 ## ビルドツール
 
-## [Babel](https://babeljs.io/)
-
-[ES2016](http://www.ecma-international.org/ecma-262/7.0/)で書けるようにするため．
-IEなどの古いブラウザを捨てるならいらない．
-EcmaScriptについては[ECMAScriptとは何か？](https://azu.github.io/slide-what-is-ecmascript/)がわかりやすいかも．
-
 ## [Webpack](https://webpack.github.io/)
 
 CSSとJavaScriptをまとめて，minifyする．
@@ -164,7 +147,7 @@ CSSとJavaScriptをまとめて，minifyする．
 ### [TravisCI](https://travis-ci.org/)
 
 CI（継続的インテグレーション）ツール．
-これで自動てテストを行って全部通ったらgh-pagesにデプロイする形にしている．
+これで自動てテストを行って全部通ったらmasterにデプロイする形にしている．
 他のホスティングサービスに乗り換えやすいような作りにしている．
 
 ### [textlint](https://textlint.github.io/)
@@ -177,6 +160,7 @@ CI（継続的インテグレーション）ツール．
 
 CSSのトランスパイラー．
 現行のブラウザで使えるCSSの規格よりも先の機能（CSS4のプロポーザルなど）を使える.
+使いたいのは主に[CSS nesting](http://tabatkins.github.io/specs/css-nesting/)。
 
 ### [StyleLint](http://stylelint.io/)
 
@@ -195,4 +179,4 @@ JavaScriptのLinter.
 PATH="$HOME/.gem/ruby/2.3.0/bin:$PATH"
 ```
 
-追加した後にターミナルを再起動するか`source ~/.bash_profile`するのを忘れないでください．
+追加した後にターミナルを再起動するか`. ~/.bash_profile`するのを忘れないでください．
