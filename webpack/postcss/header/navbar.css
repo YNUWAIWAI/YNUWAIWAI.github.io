@@ -6,7 +6,7 @@
 }
 
 .navbar {
-  max-height: var(--navbar-height);
+  height: 100%;
   max-width: 100%;
 
   &__order {
@@ -14,24 +14,28 @@
   }
 
   &--flex {
+    align-items: center;
     flex-flow: row wrap;
+    height: 100%;
   }
 }
 
 /** @define drawerToggle */
 .drawerToggle {
   flex: 0;
-  max-height: var(--navbar-height);
+  height: 100%;
+  min-width: 44px;
 
   &--button {
     font-size: var(--navbar-font-size);
     font-weight: 900;
-    max-height: var(--navbar-height);
-    padding: var(--navbar-padding);
+    height: 3.1rem;
+    padding: 10px;
     text-align: center;
   }
 
   &--icon {
+    fill: white;
     height: 1.5rem;
     width: 1.5rem;
   }
@@ -48,10 +52,10 @@
   &--text {
     font-size: var(--navbar-font-size);
     font-weight: 900;
-    padding: var(--navbar-padding);
     text-align: center;
 
     @media ( --tablet ) {
+      padding-left: 1rem;
       text-align: left;
     }
   }
@@ -66,9 +70,9 @@
   }
 
   &--item {
+    color: white;
     font-size: var(--navbar-font-size);
     font-weight: 900;
-    padding: var(--navbar-padding);
     text-align: center;
     text-decoration: none;
   }
