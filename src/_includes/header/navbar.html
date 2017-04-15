@@ -1,7 +1,6 @@
-<nav class="navbar navbar__order util--background__primaryColor700 util--shadow">
-  <div class="util--fixed util--flexContainer navbar--flex util--background__primaryColor700 util--zindex__3 util--shadow">
-    <!-- drawerToggle -->
-    <div class="drawerToggle util--flexItem util--zindex__3">
+<nav class="navbar navbar__order util--shadow">
+  <div class="util--flexContainer navbar--flex">
+    <div class="drawerToggle util--flexItem">
       <button id="toggle" class="drawerToggle--button util--background__primaryColor700">
         <svg class="drawerToggle--icon" fill="#000000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path d="M0 0h24v24H0z" fill="none" />
@@ -9,15 +8,13 @@
         </svg>
       </button>
     </div>
-    <!-- title -->
-    <div class="title util--flexItem util--zindex__3">
+    <div class="title util--flexItem">
       <h1 class="title--text">WAIWAI</h1>
     </div>
-    <!-- linkList -->
-    <div class="linkList util--flexItem util--zindex__3">
+    <div class="linkList util--flexItem">
       <ul class="linkList--flex util--flexContainer">
         {% for link in site.data.link %}
-        <li><a class="linkList--item util--flexItem util--background__primaryColor700" href={{ link.url | prepend: site.baseurl}}>{{ link.name }}</a></li>
+        <li><a class="linkList--item util--flexItem" href={{ link.url | prepend: site.baseurl}}>{{ link.name }}</a></li>
         {% endfor %}
       </ul>
     </div>
