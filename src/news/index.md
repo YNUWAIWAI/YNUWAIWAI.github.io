@@ -1,6 +1,6 @@
 ---
 title:  "news"
-layout: default
+layout: news
 permalink: /news
 ---
 {% include postlist.html %}
