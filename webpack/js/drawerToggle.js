@@ -3,12 +3,10 @@ const drawer = document.getElementById('drawer');
 const toggle = document.getElementById('toggle');
 const obfucator = document.getElementById('obfucator');
 
-toggle.addEventListener('click', () => {
+const handleDrawer = function drawerToggle() {
   drawer.classList.toggle('drawer__visible');
   obfucator.classList.toggle('obfucator__visible');
-});
+};
 
-obfucator.addEventListener('click', () => {
-  drawer.classList.toggle('drawer__visible');
-  obfucator.classList.toggle('obfucator__visible');
-});
+toggle.addEventListener('click', handleDrawer);
+obfucator.addEventListener('click', handleDrawer);
