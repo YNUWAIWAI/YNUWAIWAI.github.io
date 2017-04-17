@@ -27,7 +27,7 @@
 
   &--text {
     color: rgba(0, 0, 0, 0.6);
-    font-size: 1rem;
+    font-size: x-large;
     padding: 1rem;
   }
 }
