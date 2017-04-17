@@ -2,7 +2,7 @@
 <nav id="drawer" class="drawer drawer__animation util--card__color util--zindex__4">
   <ul class="drawer--linkList">
     {% for link in site.data.link %}
-      <li><a class="drawer--linkListItem" href={{ link.url | prepend: site.baseurl}}>{{ link.name }}</a></li>
+      <li><a class="drawer--linkListItem util--animation__touch" href={{ link.url | prepend: site.baseurl}}>{{ link.name }}</a></li>
     {% endfor %}
   </ul>
 </nav>
