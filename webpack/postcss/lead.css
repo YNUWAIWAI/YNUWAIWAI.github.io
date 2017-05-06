@@ -2,7 +2,9 @@
 .lead {
   max-width: 100vw;
   order: 2;
+  position: relative;
   text-align: center;
+  top: 3.1rem;
   width: 100%;
 
   &--img {
