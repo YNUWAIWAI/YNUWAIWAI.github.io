@@ -4,4 +4,4 @@ categories: jekyll update
 layout: default
 permalink: /contact
 ---
-CONTUCT US, if you are intrested in our activities
+興味のある方はTwitterで[@ynupc](https://twitter.com/ynupc)に連絡してください。

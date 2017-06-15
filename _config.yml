@@ -6,3 +6,4 @@ exclude:
   - vendor
   - deploy_key
 permalink: /post/:title.html
+timezone: Asia/Tokyo
