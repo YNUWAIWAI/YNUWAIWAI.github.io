@@ -45,7 +45,9 @@
 ```bash
 $ ./start.sh
 ```
-`tools/Dockerfile`により`ynuwaiwai/hp`というDockerイメージが作られ、続けてDockerコンテナが作られる。
+[DockerHub](https://hub.docker.com/r/ynuwaiwai/ynuwaiwai.github.io/)
+から`ynuwaiwai/ynuwaiwai.github.io`というDockerイメージをとってきて，それをもとにDockerコンテナを作る．
+`docker run`のオプション`--rm`によりDockerコンテナは実行終了後破棄される．
 
 ## Mac OSX or Linux
 
