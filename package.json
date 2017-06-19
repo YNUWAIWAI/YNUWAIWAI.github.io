@@ -17,7 +17,8 @@
     "test:eslint": "eslint webpack/js/**/*",
     "watch:webpack": "cross-env NODE_ENV=development webpack -d --progress -w",
     "watch:jekyll": "cross-env JEKYLL_ENV=development bundle exec jekyll serve -H 0.0.0.0 -L",
-    "start": "run-p watch:*"
+    "start": "run-p watch:*",
+    "post": "node tools/createPost.js"
   },
   "repository": {
     "url": "git@github.com:YNUWAIWAI/YNUWAIWAI.github.io.git",
@@ -31,6 +32,7 @@
     "extract-text-webpack-plugin": "^2.1.0",
     "glob": "^7.1.1",
     "js-beautify": "^1.6.11",
+    "moment": "^2.18.1",
     "npm-run-all": "^3.1.1",
     "postcss-apply": "^0.4.0",
     "postcss-custom-media": "^5.0.1",
