@@ -3,9 +3,10 @@ const path = require('path');
 const fs = require('fs');
 
 const filename = process.argv[2] || 'sample';
+const now = moment()
 const post = {
-  date: moment().format('YYYY-MM-DD HH:mm:ss ZZ'),
-  filename: `${moment().format('YYYY-MM-DD')}-${filename}.md`,
+  date: now.format('YYYY-MM-DD HH:mm:ss ZZ'),
+  filename: `${now.format('YYYY-MM-DD')}-${filename}.md`,
   title: 'New Post!'
 };
 
