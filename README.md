@@ -124,6 +124,13 @@ $ yarn start
 ```
 <http://127.0.0.1:4000/>を開く
 
+# 記事を書く
+
+```bash
+yarn post hoge
+```
+で`src/_post/`に`YYYY-MM-DD-hoge.md`が作られるので，これをベースにして書く．
+
 # ツール
 
 ## ホスティングサービス
