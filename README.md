@@ -45,7 +45,9 @@
 ```bash
 $ ./start.sh
 ```
-`tools/Dockerfile`により`ynuwaiwai/hp`というDockerイメージが作られ、続けてDockerコンテナが作られる。
+[DockerHub](https://hub.docker.com/r/ynuwaiwai/ynuwaiwai.github.io/)
+から`ynuwaiwai/ynuwaiwai.github.io`というDockerイメージをとってきて，それをもとにDockerコンテナを作る．
+`docker run`のオプション`--rm`によりDockerコンテナは実行終了後破棄される．
 
 ## Mac OSX or Linux
 
@@ -121,6 +123,13 @@ $ cd path/to/repo
 $ yarn start
 ```
 <http://127.0.0.1:4000/>を開く
+
+# 記事を書く
+
+```bash
+yarn post hoge
+```
+で`src/_post/`に`YYYY-MM-DD-hoge.md`が作られるので，これをベースにして書く．
 
 # ツール
 
