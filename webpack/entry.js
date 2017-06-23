@@ -11,3 +11,4 @@ require('./postcss/postlist');
 require('./postcss/lead');
 require('./postcss/sidenav');
 require('./postcss/post');
+require('./postcss/prism');
