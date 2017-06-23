@@ -5,6 +5,7 @@ require('./postcss/main');
 require('./postcss/header/header');
 require('./postcss/header/navbar');
 require('./postcss/header/drawer');
+require('./postcss/cardlist');
 require('./postcss/content');
 require('./postcss/footer');
 require('./postcss/postlist');
