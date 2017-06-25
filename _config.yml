@@ -2,6 +2,11 @@ source: ./src
 destination: ./_site
 baseurl: ""
 markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter_opts:
+    disable: true
 exclude:
   - vendor
   - deploy_key
