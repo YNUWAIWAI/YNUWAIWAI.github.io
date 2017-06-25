@@ -6,7 +6,7 @@
           <span class="postlist--itemTitle util--inlineFlexItem">{{ post.title }}</span>
           <span class="postlist--itemTime util--inlineFlexItem"><time>{{ post.date | date: "%F %T" }}</time></span>
         </div>
-        <div class="postlist--itemExcerpt">{{ post.excerpt | remove: '<p>' | remove: '</p>' | truncatewords:30 }}</div>
+        <div class="postlist--itemExcerpt">{{ post.excerpt | strip_html | truncatewords:30 }}</div>
       </a>
     </li>
   {% endfor %}
