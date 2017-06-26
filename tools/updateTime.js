@@ -4,15 +4,15 @@ const fs = require('fs');
 const path = require('path');
 
 const now = moment();
-const inputFileName = process.argv[2];
-const outputFileName = inputFileName.replace(/\d\d\d\d-\d\d-\d\d/, now.format('YYYY-MM-DD'));
+const inputFileName = path.basename(process.argv[2]);
+const outputFileName = inputFileName.replace(/^\d\d\d\d-\d\d-\d\d/, now.format('YYYY-MM-DD'));
 const input = path.resolve(__dirname, '..', 'src', '_posts', inputFileName);
 const output = path.resolve(__dirname, '..', 'src', '_posts', outputFileName);
 
-fs.stat(inputFileName, (err) => {
+fs.stat(input, (err) => {
   if (err) {
     if (err.code === 'ENOENT') {
-      console.error(`${inputFileName}: file does not exist`);
+      console.error(`${input}: file does not exist`);
 
       return;
     }
