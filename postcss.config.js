@@ -26,7 +26,6 @@ const cssnanoOption = () => {
 };
 
 module.exports = {
-  map: false,
   plugins: {
     'postcss-custom-media': {
       'extensions': {
