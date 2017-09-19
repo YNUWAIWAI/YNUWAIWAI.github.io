@@ -1,4 +1,3 @@
-/** @define drawer */
 .drawer {
 
   /* Change display height hiding URL bar */
@@ -25,7 +24,6 @@
   }
 }
 
-/** @define obfucator */
 .obfucator {
   background: rgba(0, 0, 0, 0.5);
 
