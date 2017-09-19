@@ -2,8 +2,8 @@
 layout: post
 title:  "Pythonでユニットテストを書く"
 date:   2017-06-26 19:35:33 +0900
+author: nimius
 ---
-文責: @nimiusxp(Twitter)
 # はじめに
 ## 書くこと，書かないこと
 Pythonの標準ライブラリの使い方は[公式のドキュメント](https://docs.python.jp/3/library/index.html)を見ればいいので書きません．
