@@ -1,6 +1,10 @@
 <article class="post util--shadow util--card__color">
   <header>
     <span class="post--title util--inlineFlexItem">{{ page.title }}</span>
+    {% assign author = site.data.members[page.author] %}
+    {% if author %}
+      <p>文責: <a href="https://twitter.com/{{author.twitter}}">@{{author.twitter}}</a>（Twitter）</p>
+    {% endif %}
   </header>
   <div>
     {{ content }}
