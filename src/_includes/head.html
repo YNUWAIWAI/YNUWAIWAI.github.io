@@ -4,4 +4,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href={{ "/assets/css/bundle.css" | prepend: site.baseurl }} rel="stylesheet" type="text/css">
   <title>WAIWAI - {{ page.title }}</title>
+  <script defer src={{ "/assets/js/bundle.js" | prepend: site.baseurl }}></script>
+  {% if page.url contains "/post/" %}
+  <script defer src={{ "/assets/js/prism.js" | prepend: site.baseurl }}></script>
+  {% endif %}
 </head>
