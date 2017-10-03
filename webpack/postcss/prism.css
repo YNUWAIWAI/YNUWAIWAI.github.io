@@ -22,6 +22,21 @@ pre[ class *= 'language-' ] {
   hyphens: none;
 }
 
+pre[ class *= 'language-' ] {
+  & > code,
+  & code > span {
+    font: inherit;
+  }
+
+  @media ( --tablet ) {
+    font-size: small;
+  }
+
+  @media ( --mobileL ) {
+    font-size: x-small;
+  }
+}
+
 @media print {
   code[ class *= 'language-' ],
   pre[ class *= 'language-' ] {
