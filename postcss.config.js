@@ -41,7 +41,7 @@ module.exports = {
     'postcss-apply': {},
     'postcss-font-smoothing': {},
     'postcss-initial': {},
-    'postcss-nesting': {},
+    'postcss-nested': {},
     // NOTE: Don't change the order below.
     'cssnano': cssnanoOption(),
   }

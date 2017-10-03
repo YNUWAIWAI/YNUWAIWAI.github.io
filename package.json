@@ -41,7 +41,7 @@
     "postcss-initial": "^2.0.0",
     "postcss-loader": "^2.0.6",
     "postcss-media-minmax": "^3.0.0",
-    "postcss-nesting": "3",
+    "postcss-nested": "^2.1.2",
     "rimraf": "^2.6.2",
     "style-loader": "^0.18.2",
     "stylelint": "^8.1.1",
