@@ -8,6 +8,12 @@
     margin-bottom: 1rem;
   }
 
+  &--body {
+    & p {
+      margin: 1rem 0 1.5rem;
+    }
+  }
+
   &--footer {
     margin-top: 1rem;
     text-align: right;
