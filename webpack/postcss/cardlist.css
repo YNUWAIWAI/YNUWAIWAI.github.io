@@ -1,0 +1,20 @@
+/** @define cardlist */
+.cardlist {
+  width: 100%;
+
+  &--item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    color: black;
+    display: block;
+    flex: 3 0 33%;
+    list-style-type: none;
+    text-decoration: none;
+  }
+
+  &--flex {
+    display: flex;
+    align-items: baseline;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+}

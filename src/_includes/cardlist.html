@@ -1,0 +1,10 @@
+<ul class="cardlist cardlist--flex util--shadow util--card__color">
+  {% for blog in site.data.blog %}
+    <li class="cardlist--item">
+      <a class="util--animation__touch">
+        <img src="{{site.baseurl}}/assets/img/{{ blog.image }}">
+        {{ blog.description }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>
