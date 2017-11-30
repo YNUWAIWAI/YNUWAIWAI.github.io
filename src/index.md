@@ -18,6 +18,6 @@ title : Home
   <dt>プロジェクト</dt>
   <dd>人狼プラットフォーム</dd>
   <dt>スポンサー</dt>
-  <dd><a href="https://rakumo.com/"><img src="{{ "/assets/img/rakumo.png" | prepend: site.baseurl }}"></a></dd>
+  <dd><a href="https://rakumo.com/"><img src="{{ "/assets/img/rakumo.png" | prepend: site.baseurl }}" alt="rakumo-logo"></a></dd>
 </dl>
 {% include postlist.html %}
