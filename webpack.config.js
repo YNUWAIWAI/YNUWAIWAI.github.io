@@ -31,8 +31,10 @@ const config = {
   }
 };
 
-if (process.env.NODE_ENV === 'production') {
-  config.plugins.push(new TerserPlugin());
-}
+module.exports = (env, argv) => {
+  if (argv.mode === 'production') {
+    config.plugins.push(new TerserPlugin());
+  }
 
-module.exports = config;
+  return config;
+};
