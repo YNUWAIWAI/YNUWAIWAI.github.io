@@ -30,8 +30,8 @@ script:
 after_success:
   - |
 
-    $(npm bin)/set-up-ssh --key "$encrypted_f86046f9ff72_key" \
-                          --iv "$encrypted_f86046f9ff72_iv" \
+    $(npm bin)/set-up-ssh --key "$encrypted_9ca81b5594f5_key" \
+                          --iv "$encrypted_9ca81b5594f5_iv" \
                           --path-encrypted-key "github_deploy_key.enc"
     $(npm bin)/update-branch --commands "yarn build:production" \
                              --commit-message "This branch is used only for GitHub Pages. If you want to improve our website, you would contribute to the src branch." \
