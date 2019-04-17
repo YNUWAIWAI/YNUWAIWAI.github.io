@@ -15,7 +15,7 @@
     text-decoration: none;
   }
 
-  @media ( --tablet ) {
+  @media ( width <= 768px ) { /* --tablet */
     display: none;
   }
 }

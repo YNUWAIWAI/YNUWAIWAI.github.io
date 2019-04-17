@@ -8,33 +8,18 @@
 /* stylelint-disable selector-no-qualifying-type, selector-attribute-operator-whitelist */
 code[ class *= 'language-' ],
 pre[ class *= 'language-' ] {
-  color: black;
   background: none;
-  text-shadow: 0 1px white;
+  color: black;
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  text-align: left;
-  white-space: pre;
-  word-spacing: normal;
-  word-break: normal;
-  word-wrap: normal;
+  hyphens: none;
   line-height: 1.5;
   tab-size: 4;
-  hyphens: none;
-}
-
-pre[ class *= 'language-' ] {
-  & > code,
-  & code > span {
-    font: inherit;
-  }
-
-  @media ( --tablet ) {
-    font-size: small;
-  }
-
-  @media ( --mobileL ) {
-    font-size: x-small;
-  }
+  text-align: left;
+  text-shadow: 0 1px white;
+  white-space: pre;
+  word-break: normal;
+  word-spacing: normal;
+  word-wrap: normal;
 }
 
 @media print {
@@ -46,9 +31,22 @@ pre[ class *= 'language-' ] {
 
 /* Code blocks */
 pre[ class *= 'language-' ] {
-  padding: 1em;
   margin: 0.5em 0;
   overflow: auto;
+  padding: 1em;
+
+  & > code,
+  & code > span {
+    font: inherit;
+  }
+
+  @media ( width <= 768px ) { /* --tablet */
+    font-size: small;
+  }
+
+  @media ( width <= 425px ) { /* --mobileL */
+    font-size: x-small;
+  }
 }
 
 :not( pre ) > code[ class *= 'language-' ],
@@ -58,8 +56,8 @@ pre[ class *= 'language-' ] {
 
 /* Inline code */
 :not( pre ) > code[ class *= 'language-' ] {
-  padding: 0.1em;
   border-radius: 0.3em;
+  padding: 0.1em;
   white-space: normal;
 }
 
@@ -102,8 +100,8 @@ pre[ class *= 'language-' ] {
 .token.url,
 .language-css .token.string,
 .style .token.string {
-  color: #a67f59;
   background: hsla(0, 0%, 100%, 0.5);
+  color: #a67f59;
 }
 
 .token.atrule,
