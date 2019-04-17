@@ -9,19 +9,23 @@
   &--img {
     font-size: 10rem;
 
-    @media ( --tablet ) {
+    /* --tablet */
+    @media (width <= 768px) {
       font-size: 6.5rem;
     }
 
-    @media ( --mobileL ) {
+    /* --mobileL */
+    @media (width <= 425px) {
       font-size: 5rem;
     }
 
-    @media ( --mobileM ) {
+    /* --mobileM */
+    @media (width <= 375px) {
       font-size: 4rem;
     }
 
-    @media ( --mobileS ) {
+    /* --mobileS */
+    @media (width <= 320px) {
       font-size: 3rem;
     }
   }

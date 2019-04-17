@@ -28,11 +28,13 @@ pre[ class *= 'language-' ] {
     font: inherit;
   }
 
-  @media ( --tablet ) {
+  /* --tablet */
+  @media (width <= 768px) {
     font-size: small;
   }
 
-  @media ( --mobileL ) {
+  /* --mobileL */
+  @media (width <= 425px) {
     font-size: x-small;
   }
 }

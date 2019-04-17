@@ -7,7 +7,8 @@
   position: relative;
   top: 3.1rem;
 
-  @media ( --tablet ) {
+  /* --tablet */
+  @media (width <= 768px) {
     margin: 0;
     min-height: calc(100vh - 6.2rem);
   }

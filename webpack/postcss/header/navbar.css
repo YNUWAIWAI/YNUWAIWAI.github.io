@@ -38,7 +38,8 @@
     width: 1.5rem;
   }
 
-  @media ( --desktop ) {
+  /* --desktop */
+  @media (width > 768px) {
     display: none;
   }
 }
@@ -51,7 +52,8 @@
     font-weight: 900;
     text-align: center;
 
-    @media ( --tablet ) {
+    /* --tablet */
+    @media (width <= 768px) {
       padding-left: 1rem;
       text-align: left;
     }
@@ -73,7 +75,8 @@
     text-decoration: none;
   }
 
-  @media ( --tablet ) {
+  /* --tablet */
+  @media (width <= 768px) {
     display: none;
   }
 }
