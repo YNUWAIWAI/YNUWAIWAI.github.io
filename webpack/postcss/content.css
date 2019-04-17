@@ -1,14 +1,13 @@
 .content {
   flex: 2 1 0%;
-  max-width: 100%;
   margin: 1rem;
+  max-width: 100%;
   min-height: calc(100vh - 8.2rem);
   order: 4;
   position: relative;
   top: 3.1rem;
 
-  /* --tablet */
-  @media (width <= 768px) {
+  @media ( width <= 768px ) { /* --tablet */
     margin: 0;
     min-height: calc(100vh - 6.2rem);
   }
