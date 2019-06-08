@@ -46,7 +46,7 @@ In the photo above, please note the positions of the fingers of the right hand. 
 それでも，２つだけこちらだけでは対応できない役職アイコンがあったので，明確かつできるだけ簡単な作業になるような指示を伝えて，修正していただきました．
 
 完成した画像は次のリンク先にあります（私が作成したものや手を加えたものも含みます）．
-https://drive.google.com/drive/folders/1rcu4UChICUHgulG757Z2W81nYp7JjfAB?usp=sharing
+[https://drive.google.com/drive/folders/1rcu4UChICUHgulG757Z2W81nYp7JjfAB?usp=sharing](https://drive.google.com/drive/folders/1rcu4UChICUHgulG757Z2W81nYp7JjfAB?usp=sharing)
 
 Fiverrでは仕事が終わるとbuyer（私）はseller（イラストレータ）に対してreviewをすることになっています．
 そこで，私は彼のreviewに  
@@ -70,9 +70,9 @@ Fiverrには，物価による比較優位の影響か，安い価格で仕事�
 （注：Fiverrから金銭等を受け取ってステマしているわけではないです．）
 
 成果物（私が作成したものや手を加えたものも含む）：  
-https://drive.google.com/drive/folders/1rcu4UChICUHgulG757Z2W81nYp7JjfAB?usp=sharing  
+[https://drive.google.com/drive/folders/1rcu4UChICUHgulG757Z2W81nYp7JjfAB?usp=sharing](https://drive.google.com/drive/folders/1rcu4UChICUHgulG757Z2W81nYp7JjfAB?usp=sharing)  
 Fiverr：  
-https://fiverr.com  
+[https://fiverr.com](https://fiverr.com)  
 
 ---
 
