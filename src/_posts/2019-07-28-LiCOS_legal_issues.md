@@ -1,8 +1,11 @@
+---
 layout: post
 title:  "人狼ゲームプラットフォームLiCOSの法的課題について"
 date:   2019-07-28 20:00:00 +0900
 author: ynupc
 ---
+
+# LiCOSの法律関係の課題解決の進捗状況
 
 YNUWAIWAIでは，人狼ゲームプラットフォームLiCOSを開発しており，現在，[rakumo 株式会社](https://corporate.rakumo.com/)様にスポンサーになっていただいております．
 
