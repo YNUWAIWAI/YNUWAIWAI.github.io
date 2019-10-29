@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href=/assets/css/bundle.css rel="stylesheet" type="text/css">
+  <title>WAIWAI - 東大入試世界史論述問題自動解答システムを動かす</title>
+  <script defer src=/assets/js/bundle.js></script>
+  
+  <script defer src=/assets/js/prism.js></script>
+  
+</head>
+<body>
+  <div class="util--flexContainer util--flex__row util--background__color">
+    <header class="header util--fixed util--zindex__3 util--background__primaryColor700 util--shadow util--flexItem">
+  <nav class="navbar navbar__order util--shadow">
+  <div class="util--flexContainer navbar--flex">
+    <div class="drawerToggle util--flexItem">
+      <button id="toggle" class="drawerToggle--button util--background__primaryColor700">
+        <svg class="drawerToggle--icon" fill="#000000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0h24v24H0z" fill="none" />
+          <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+        </svg>
+      </button>
+    </div>
+    <div class="title util--flexItem">
+      <h1 class="title--text">WAIWAI</h1>
+    </div>
+    <div class="linkList util--flexItem">
+      <ul class="linkList--flex util--flexContainer">
+        
+        <li><a class="linkList--item util--flexItem" href=/>Home</a></li>
+        
+        <li><a class="linkList--item util--flexItem" href=/about>About</a></li>
+        
+        <li><a class="linkList--item util--flexItem" href=/news>News</a></li>
+        
+        <li><a class="linkList--item util--flexItem" href=/news>Blog</a></li>
+        
+        <li><a class="linkList--item util--flexItem" href=/contact>Contact</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+  <div id="obfucator" class="obfucator util--zindex__3"></div>
+<nav id="drawer" class="drawer drawer__animation util--card__color util--zindex__4">
+  <ul class="drawer--linkList">
+    
+      <li><a class="drawer--linkListItem util--animation__touch" href=/>Home</a></li>
+    
+      <li><a class="drawer--linkListItem util--animation__touch" href=/about>About</a></li>
+    
+      <li><a class="drawer--linkListItem util--animation__touch" href=/news>News</a></li>
+    
+      <li><a class="drawer--linkListItem util--animation__touch" href=/news>Blog</a></li>
+    
+      <li><a class="drawer--linkListItem util--animation__touch" href=/contact>Contact</a></li>
+    
+  </ul>
+</nav>
+</header>
+    <div class="sidenav util--flexItem util--background__color">
+  <ul class="sidenav--list  util--card__color util--shadow">
+    
+      <li><a class="sidenav--item util--animation__touch" href=/>Home</a></li>
+    
+      <li><a class="sidenav--item util--animation__touch" href=/about>About</a></li>
+    
+      <li><a class="sidenav--item util--animation__touch" href=/news>News</a></li>
+    
+      <li><a class="sidenav--item util--animation__touch" href=/news>Blog</a></li>
+    
+      <li><a class="sidenav--item util--animation__touch" href=/contact>Contact</a></li>
+    
+  </ul>
+</div>
+    <main class="content util--flexItem util--zindex__0 util--markdown">
+      <article class="post util--shadow util--card__color">
+  <header>
+    <span class="post--title util--inlineFlexItem">東大入試世界史論述問題自動解答システムを動かす</span>
+    
+    
+      <p>文責: <a href="https://twitter.com/ynupc">@ynupc</a>（Twitter）</p>
+    
+  </header>
+  <div class="post--body">
+    <h1 id="はじめに">はじめに</h1>
+
+<p>情報処理学会の会誌「情報処理」2017年7月号Vol.58 No.7 通巻628号の小特集『「ロボットは東大に入れるか」という企て』の中の記事「７. 世界史：東大型　論述問題と語句記述問題への挑戦」p.611-612にも掲載されている
+東大入試の二次試験世界史科目の第一問に自動解答するシステム（<a href="https://github.com/ktr-skmt/FelisCatusZero-multilingual/">FelisCatus Zero-multilingual</a>）の動かし方について解説します。
+動かし方ではなく処理についても興味がある方は、小特集の記事には処理についての概要が書かれているので、そちらをご覧になってください。</p>
+
+<p>システムの処理で使用するデータが配布不可能な為、取得不可能な人は代替物を作成する必要がありますが、
+データを取得・作成せずに動かすことができるTrialがシステムの公開と共に用意されています。
+Trialでは、サンプルとして用意されている論述問題の解答処理の中で非配布データが必要な処理が終わった中間状態から残りの処理を試すことができます。
+今回はインストールからTrialを動かすまでを解説します。</p>
+
+<h2 id="サンプル問題と模範解答">サンプル問題と模範解答</h2>
+
+<p>サンプル問題として、次のディレクトリの下にあるファイルが用意されています。</p>
+
+<p><a href="https://github.com/ktr-skmt/FelisCatusZero-multilingual/tree/master/src/main/resources/qa_corpus">https://github.com/ktr-skmt/FelisCatusZero-multilingual/tree/master/src/main/resources/qa_corpus</a></p>
+
+<p>問題・解答のペアがanswer_sectionタグごとに区切られています。
+answer_setタグの下に模範解答が含まれていますがこれらは著作権の都合上ダミーです。answer_setタグの下を除いた箇所が問題文です。</p>
+
+<h2 id="環境">環境</h2>
+
+<p>FelisCatus Zero-multilingualは、macOS SierraとWindows 10 Pro上で動作確認済みですが、今回の解説ではmacOS Sierraのみを対象とします。</p>
+
+<p>事前にインストールが必要なソフトウェア・データ：</p>
+
+<ul>
+  <li>Oracle Java SE Development Kit 8</li>
+  <li>プログラミング言語Scala 2.12.1</li>
+  <li>ビルドツールSimple Build Tool 0.13.15</li>
+  <li>形態素解析器MeCab　0.996</li>
+  <li>MeCab用辞書IPADic　mecab-ipadic-2.7.0-20070801</li>
+  <li>MeCab用辞書UniDic　unidic-mecab 2.1.2</li>
+  <li>検索エンジンIndri 5.11（<strong><em>Trialでは不要</em></strong>）</li>
+  <li>世界史教科書データ(国際的ワークショップNTCIR-13 QA Lab-3に参加し覚書を提出し審査が通ると取得可能、<strong><em>Trialでは不要</em></strong>)</li>
+  <li>世界史用語集データ（非配布、<strong><em>Trialでは不要</em></strong>）</li>
+</ul>
+
+<h3 id="mecabのインストール方法">MeCabのインストール方法</h3>
+<p><a href="http://taku910.github.io/mecab/#download">http://taku910.github.io/mecab/#download</a> からmecab-0.996.tar.gzをダウンロードし、次のコマンドを実行します。</p>
+
+<pre><code class="language-bash">tar zxfv mecab-0.996.tar.gz
+cd mecab-0.996
+./configure --with-charset=utf8 --enable-utf8-only
+make
+make check
+sudo make install
+</code></pre>
+
+<p><a href="http://taku910.github.io/mecab/#download">http://taku910.github.io/mecab/#download</a> からmecab-ipadic-2.7.0-20070801.tar.gzをダウンロードし、次のコマンドを実行します。</p>
+
+<pre><code class="language-bash">tar zxfv mecab-ipadic-2.7.0-20070801.tar.gz
+cd mecab-ipadic-2.7.0-20070801
+./configure --with-charset=utf8
+make
+sudo make install
+</code></pre>
+
+<p><a href="https://ja.osdn.net/projects/unidic/releases/">https://ja.osdn.net/projects/unidic/releases/</a> からunidic-mecab-2.1.2_bin.zipをダウンロードし、次のコマンドを実行します。</p>
+<pre><code class="language-bash">unzip unidic-mecab-2.1.2_bin.zip
+mv unidic-mecab-2.1.2_bin /usr/local/lib/mecab/dic/unidic
+</code></pre>
+
+<p>UniDicのdicrcファイルを編集します。dicrcファイルを次のように開きます。</p>
+
+<pre><code class="language-bash">sudo vi /usr/local/lib/mecab/dic/unidic/dicrc
+</code></pre>
+
+<p>output-format-typeの行の先頭にセミコロン「;」を挿入して、コメントアウトします。</p>
+
+<p>これを・・・</p>
+<pre><code class="language-bash">output-format-type = unidic
+</code></pre>
+
+<p>こう
+↓</p>
+<pre><code class="language-bash">;output-format-type = unidic
+</code></pre>
+
+<h1 id="feliscatus-zero-multilingual">FelisCatus Zero-multilingual</h1>
+
+<p>ここでは、FelisCatus Zero-multilingualのインストール方法、Trialの実行方法、出力について解説します。</p>
+
+<h2 id="インストール方法">インストール方法</h2>
+
+<p>Gitをインストールしてあれば、次のコマンドを実行してインストールします。</p>
+
+<pre><code class="language-bash">git clone git@github.com:ktr-skmt/FelisCatusZero-multilingual.git
+</code></pre>
+
+<p>Gitをインストールしていなければ、Gitをインストール後に上記のコマンドを実行するか、<a href="https://github.com/ktr-skmt/FelisCatusZero-multilingual/archive/master.zip">ダウンロード用URL</a>をウェブブラウザで開いてZIPファイルをダウンロードし、解凍します。</p>
+
+<pre><code class="language-bash">unzip master.zip
+</code></pre>
+
+<h2 id="trialの実行方法">Trialの実行方法</h2>
+
+<p>Gitでクローンしたファイル（または、ダウンロードし解凍したファイル）のルートディレクトリ（build.sbtが置かれているディレクトリ）上で次のコマンドを実行します。</p>
+<pre><code class="language-bash">bash trial.sh
+</code></pre>
+
+<h2 id="出力">出力</h2>
+
+<p>次のページ（<a href="https://github.com/ktr-skmt/FelisCatusZero-multilingual/blob/master/tutorial/Run.ipynb">Run.ipynb</a>）にTrialを実行した際とほぼ同等の、実行中の出力例や最終出力の例があります。ただし、評価結果の数値は、模範解答がダミーである為、完全にでたらめです。
+標準出力では、次の「Essay:」から始まる行にシステムの出力結果の論述解答が表示されています。</p>
+<pre><code class="language-bash">[info] &gt;&gt; Essay Generator Processing
+[info] &gt;&gt; Japanese Essay Generator Processing
+[info] Dataset:
+[info] * A.xml
+[info] Question:
+[info] - K792W10_【１】
+[info] System Answer
+[info] Writer: Baseline
+[info] Essay: また、ヒンドゥー教徒とイスラーム教徒の融和をはかるため、・・・
+</code></pre>
+
+<h1 id="まとめ">まとめ</h1>
+<ul>
+  <li>サンプル問題に対して、Trialとして途中の処理からの実行をmacOS Sierra上で試した。</li>
+</ul>
+
+<h1 id="参考資料">参考資料</h1>
+<ul>
+  <li>情報処理学会の会誌「情報処理」2017年7月号Vol.58 No.7 通巻628号の小特集『「ロボットは東大に入れるか」という企て』の中の記事「７. 世界史：東大型　論述問題と語句記述問題への挑戦」p.611-612</li>
+  <li>FelisCatus Zero-multilingual (<a href="https://github.com/ktr-skmt/FelisCatusZero-multilingual">https://github.com/ktr-skmt/FelisCatusZero-multilingual</a>)</li>
+</ul>
+
+  </div>
+  <footer class="post--footer">
+    posted at <time>2017-05-25 20:00:00</time>
+  </footer>
+</article>
+    </main>
+    <footer class="footer util--flexItem util--zindex__0 util--background__primaryColor500">
+  <p><small>Copyright © 2016-2019 YNUWAIWAI ALL Rights Reserved.</small></p>
+</footer>
+
+  </div>
+</body>
+</html>

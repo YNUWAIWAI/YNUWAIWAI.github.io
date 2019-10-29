@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href=/assets/css/bundle.css rel="stylesheet" type="text/css">
+  <title>WAIWAI - 人狼ゲームプラットフォームLiCOSのロボットプレイヤー開発用環境</title>
+  <script defer src=/assets/js/bundle.js></script>
+  
+  <script defer src=/assets/js/prism.js></script>
+  
+</head>
+<body>
+  <div class="util--flexContainer util--flex__row util--background__color">
+    <header class="header util--fixed util--zindex__3 util--background__primaryColor700 util--shadow util--flexItem">
+  <nav class="navbar navbar__order util--shadow">
+  <div class="util--flexContainer navbar--flex">
+    <div class="drawerToggle util--flexItem">
+      <button id="toggle" class="drawerToggle--button util--background__primaryColor700">
+        <svg class="drawerToggle--icon" fill="#000000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0h24v24H0z" fill="none" />
+          <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+        </svg>
+      </button>
+    </div>
+    <div class="title util--flexItem">
+      <h1 class="title--text">WAIWAI</h1>
+    </div>
+    <div class="linkList util--flexItem">
+      <ul class="linkList--flex util--flexContainer">
+        
+        <li><a class="linkList--item util--flexItem" href=/>Home</a></li>
+        
+        <li><a class="linkList--item util--flexItem" href=/about>About</a></li>
+        
+        <li><a class="linkList--item util--flexItem" href=/news>News</a></li>
+        
+        <li><a class="linkList--item util--flexItem" href=/news>Blog</a></li>
+        
+        <li><a class="linkList--item util--flexItem" href=/contact>Contact</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+  <div id="obfucator" class="obfucator util--zindex__3"></div>
+<nav id="drawer" class="drawer drawer__animation util--card__color util--zindex__4">
+  <ul class="drawer--linkList">
+    
+      <li><a class="drawer--linkListItem util--animation__touch" href=/>Home</a></li>
+    
+      <li><a class="drawer--linkListItem util--animation__touch" href=/about>About</a></li>
+    
+      <li><a class="drawer--linkListItem util--animation__touch" href=/news>News</a></li>
+    
+      <li><a class="drawer--linkListItem util--animation__touch" href=/news>Blog</a></li>
+    
+      <li><a class="drawer--linkListItem util--animation__touch" href=/contact>Contact</a></li>
+    
+  </ul>
+</nav>
+</header>
+    <div class="sidenav util--flexItem util--background__color">
+  <ul class="sidenav--list  util--card__color util--shadow">
+    
+      <li><a class="sidenav--item util--animation__touch" href=/>Home</a></li>
+    
+      <li><a class="sidenav--item util--animation__touch" href=/about>About</a></li>
+    
+      <li><a class="sidenav--item util--animation__touch" href=/news>News</a></li>
+    
+      <li><a class="sidenav--item util--animation__touch" href=/news>Blog</a></li>
+    
+      <li><a class="sidenav--item util--animation__touch" href=/contact>Contact</a></li>
+    
+  </ul>
+</div>
+    <main class="content util--flexItem util--zindex__0 util--markdown">
+      <article class="post util--shadow util--card__color">
+  <header>
+    <span class="post--title util--inlineFlexItem">人狼ゲームプラットフォームLiCOSのロボットプレイヤー開発用環境</span>
+    
+    
+      <p>文責: <a href="https://twitter.com/ynupc">@ynupc</a>（Twitter）</p>
+    
+  </header>
+  <div class="post--body">
+    <h1 id="licosのロボットプレイヤー開発用環境">LiCOSのロボットプレイヤー開発用環境</h1>
+
+<p>YNUWAIWAIでは，人狼ゲームプラットフォームLiCOSを開発しており，現在，<a href="https://corporate.rakumo.com/">rakumo 株式会社</a>様にスポンサーになっていただいております．</p>
+
+<p>LiCOSのロボットプレイヤー開発用環境について，次のGoole Docsにまとめていくことにしました．
+特に「開発用ライブラリーとそれを使ったロボットプレイヤーのexample」についてスケジュールなども含めて書きました．</p>
+
+<p><a href="https://docs.google.com/document/d/1PFR_Sp4OjV5YJbtxuna10W1-1MnlBMusFu0kBaY0xrg/edit?usp=sharing">https://docs.google.com/document/d/1PFR_Sp4OjV5YJbtxuna10W1-1MnlBMusFu0kBaY0xrg/edit?usp=sharing</a></p>
+
+<p>LiCOSに関する過去の記事：</p>
+
+<ul>
+  <li><a href="https://ynuwaiwai.github.io/post/LiCOS.html">人狼ゲームプラットフォームLiCOS</a></li>
+  <li><a href="https://ynuwaiwai.github.io/post/LiCOS_icons.html">人狼ゲームプラットフォームLiCOSの画像作成の外注について</a></li>
+  <li><a href="https://ynuwaiwai.github.io/post/LiCOS_icons_fin.html">人狼ゲームプラットフォームLiCOSの画像作成の外注について（完成）</a></li>
+  <li><a href="https://ynuwaiwai.github.io/post/LiCOS_TOS_PP.html">人狼ゲームプラットフォームLiCOSの利用規約とプライバシーポリシー作成について</a></li>
+  <li><a href="https://ynuwaiwai.github.io/post/LiCOS_trailer.html">人狼ゲームプラットフォームLiCOSのtrailerを作ってみた</a></li>
+</ul>
+
+<hr />
+
+<p>人狼ゲームを一緒にプレイしてくださる方，人狼ゲームのプラットフォーム開発に携わってみたい方，人狼ゲームのロボット開発をしてみたい方などいらっしゃいましたら，
+<a href="https://twitter.com/ynupc">@ynupc</a>に直接連絡くださるか，次のフォームで連絡ください．<br />
+<a href="https://ws.formzu.net/dist/S61026841">LiCOS参加登録</a></p>
+
+  </div>
+  <footer class="post--footer">
+    posted at <time>2019-07-28 20:00:00</time>
+  </footer>
+</article>
+    </main>
+    <footer class="footer util--flexItem util--zindex__0 util--background__primaryColor500">
+  <p><small>Copyright © 2016-2019 YNUWAIWAI ALL Rights Reserved.</small></p>
+</footer>
+
+  </div>
+</body>
+</html>

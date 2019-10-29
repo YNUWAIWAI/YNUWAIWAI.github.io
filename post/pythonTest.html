@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href=/assets/css/bundle.css rel="stylesheet" type="text/css">
+  <title>WAIWAI - Pythonでユニットテストを書く</title>
+  <script defer src=/assets/js/bundle.js></script>
+  
+  <script defer src=/assets/js/prism.js></script>
+  
+</head>
+<body>
+  <div class="util--flexContainer util--flex__row util--background__color">
+    <header class="header util--fixed util--zindex__3 util--background__primaryColor700 util--shadow util--flexItem">
+  <nav class="navbar navbar__order util--shadow">
+  <div class="util--flexContainer navbar--flex">
+    <div class="drawerToggle util--flexItem">
+      <button id="toggle" class="drawerToggle--button util--background__primaryColor700">
+        <svg class="drawerToggle--icon" fill="#000000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0h24v24H0z" fill="none" />
+          <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+        </svg>
+      </button>
+    </div>
+    <div class="title util--flexItem">
+      <h1 class="title--text">WAIWAI</h1>
+    </div>
+    <div class="linkList util--flexItem">
+      <ul class="linkList--flex util--flexContainer">
+        
+        <li><a class="linkList--item util--flexItem" href=/>Home</a></li>
+        
+        <li><a class="linkList--item util--flexItem" href=/about>About</a></li>
+        
+        <li><a class="linkList--item util--flexItem" href=/news>News</a></li>
+        
+        <li><a class="linkList--item util--flexItem" href=/news>Blog</a></li>
+        
+        <li><a class="linkList--item util--flexItem" href=/contact>Contact</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+  <div id="obfucator" class="obfucator util--zindex__3"></div>
+<nav id="drawer" class="drawer drawer__animation util--card__color util--zindex__4">
+  <ul class="drawer--linkList">
+    
+      <li><a class="drawer--linkListItem util--animation__touch" href=/>Home</a></li>
+    
+      <li><a class="drawer--linkListItem util--animation__touch" href=/about>About</a></li>
+    
+      <li><a class="drawer--linkListItem util--animation__touch" href=/news>News</a></li>
+    
+      <li><a class="drawer--linkListItem util--animation__touch" href=/news>Blog</a></li>
+    
+      <li><a class="drawer--linkListItem util--animation__touch" href=/contact>Contact</a></li>
+    
+  </ul>
+</nav>
+</header>
+    <div class="sidenav util--flexItem util--background__color">
+  <ul class="sidenav--list  util--card__color util--shadow">
+    
+      <li><a class="sidenav--item util--animation__touch" href=/>Home</a></li>
+    
+      <li><a class="sidenav--item util--animation__touch" href=/about>About</a></li>
+    
+      <li><a class="sidenav--item util--animation__touch" href=/news>News</a></li>
+    
+      <li><a class="sidenav--item util--animation__touch" href=/news>Blog</a></li>
+    
+      <li><a class="sidenav--item util--animation__touch" href=/contact>Contact</a></li>
+    
+  </ul>
+</div>
+    <main class="content util--flexItem util--zindex__0 util--markdown">
+      <article class="post util--shadow util--card__color">
+  <header>
+    <span class="post--title util--inlineFlexItem">Pythonでユニットテストを書く</span>
+    
+    
+      <p>文責: <a href="https://twitter.com/nimiusxp">@nimiusxp</a>（Twitter）</p>
+    
+  </header>
+  <div class="post--body">
+    <h1 id="はじめに">はじめに</h1>
+<h2 id="書くこと書かないこと">書くこと，書かないこと</h2>
+<p>Pythonの標準ライブラリの使い方は<a href="https://docs.python.jp/3/library/index.html">公式のドキュメント</a>を見ればいいので書きません．
+また，サードパーティ製のテストライブラリ（<a href="http://nose2.readthedocs.io/en/latest/">nose2</a>，<a href="https://docs.pytest.org/en/latest/">pytest</a>など）については（詳しくないということもあり）書きません．</p>
+
+<p>ここではユニットテストをどのように書くかの流れを書きます．</p>
+
+<h2 id="環境">環境</h2>
+<pre><code class="language-bash">$ python -V
+Python 3.6.1 :: Continuum Analytics, Inc.
+
+$ sw_vers
+ProductName:    Mac OS X
+ProductVersion: 10.12.5
+BuildVersion:   16F73
+</code></pre>
+
+<h1 id="なぜユニットテストを書くのか">なぜユニットテストを書くのか</h1>
+
+<ul>
+  <li>バグ(実装のミス)を見つけやすくなる</li>
+  <li>テストしやすい関数（単一機能しかもたない関数）を意識するようになる</li>
+</ul>
+
+<h1 id="とりあえず書いてみる">とりあえず書いてみる</h1>
+<p>Pythonの標準ライブラリにある<a href="https://docs.python.jp/3/library/unittest.html">unittest</a>を使ってユニットテストを書く例を見せたいと思います．
+今回は渡された文字列がURLかどうかを判断する関数(<code class="language-none">is_url</code>)のテスト(<code class="language-none">test_is_url</code>)を書くことにします．ここで<code class="language-none">is_url</code>関数は実装が不十分なのでテストを通して改善していくという方向でやります．</p>
+
+<h2 id="ディレクトリ構造">ディレクトリ構造</h2>
+<pre><code class="language-Markup">.
+├── test
+│   ├── __init__.py
+│   └── test_util.py &lt;= テストする関数
+└── util
+    ├── __init__.py
+    └── util.py      &lt;= 文字列がURLかどうかを判断する関数
+</code></pre>
+<h2 id="utilpy">util.py</h2>
+<pre><code class="language-python">import re
+from typing import Match
+
+
+def is_url(src: str) -&gt; Match[str]:
+    return re.fullmatch(r'^https://[0-9a-zA-Z/:%$&amp;()~.=+\-_]+$', src)
+</code></pre>
+<h2 id="test_utilpy">test_util.py</h2>
+<pre><code class="language-python">import unittest
+from util import util
+
+
+class UtilTest(unittest.TestCase):
+    def test_is_url(self):
+        cases = [
+            'http://example.com',
+            'https://example.com',
+            'https://e-ample.com',
+            'https://e_ample.com',
+            'https://ex/ample.com',
+            'https://e%3ample.com',
+            'http://example.com?q=hoge&amp;p=fuga',
+            'http://example.com#piyo',
+        ]
+        for case in cases:
+            self.assertTrue(util.is_url(case))
+</code></pre>
+
+<h1 id="テストを実行する">テストを実行する</h1>
+<p><a href="https://docs.python.jp/3/library/unittest.html#test-discovery">テストディスカバリ</a>の機能を使うと以下のように簡単に実行できます．</p>
+<pre><code class="language-bash">python -m unittest 
+</code></pre>
+
+<p>実行結果は以下のようになります．（<code class="language-none">${PROJECT_ROOT}</code>の部分は各自置き換えてください．）</p>
+<pre><code class="language-Markup">F
+======================================================================
+FAIL: test_is_url (test.test_util.UtilTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "${PROJECT_ROOT}/test/test_util.py", line 18, in test_is_url
+    self.assertTrue(util.is_url(case))
+AssertionError: None is not true
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (failures=1)
+</code></pre>
+<p>ここからわかるのは<code class="language-none">self.assertTrue(util.is_url(case))</code>の部分のテストが失敗したことだけで，具体的にどのケースが失敗したのかがわかりません．</p>
+
+<h1 id="unittestsubtestを使う">unittest.subTestを使う</h1>
+<p><a href="https://docs.python.jp/3/library/unittest.html#distinguishing-test-iterations-using-subtests">unittest.subTest</a>を使うことによりどのケースが失敗したかがわかるようになります．
+<code class="language-none">test_util.py</code>を以下のように書き換えます．</p>
+<pre><code class="language-python">import unittest
+from util import util
+
+
+class UtilTest(unittest.TestCase):
+    def test_is_url(self):
+        cases = [
+            'http://example.com',
+            'https://example.com',
+            'https://e-ample.com',
+            'https://e_ample.com',
+            'https://ex/ample.com',
+            'https://e%3ample.com',
+            'http://example.com?q=hoge&amp;p=fuga',
+            'http://example.com#piyo'
+        ]
+        for case in cases:
+            with self.subTest(string=case):
+                self.assertTrue(util.is_url(case))
+</code></pre>
+<p>テスト実行結果は以下のようになります．</p>
+<pre><code class="language-Markup">======================================================================
+FAIL: test_is_url (test.test_util.UtilTest) (string='http://example.com')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "${PROJECT_ROOT}/test/test_util.py", line 19, in test_is_url
+    self.assertTrue(util.is_url(case))
+AssertionError: None is not true
+
+======================================================================
+FAIL: test_is_url (test.test_util.UtilTest) (string='http://example.com?q=hoge&amp;p=fuga')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "${PROJECT_ROOT}/test/test_util.py", line 19, in test_is_url
+    self.assertTrue(util.is_url(case))
+AssertionError: None is not true
+
+======================================================================
+FAIL: test_is_url (test.test_util.UtilTest) (string='http://example.com#piyo')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "${PROJECT_ROOT}/test/test_util.py", line 19, in test_is_url
+    self.assertTrue(util.is_url(case))
+AssertionError: None is not true
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=3)
+</code></pre>
+<p><code class="language-none">http://example.com</code>と <code class="language-none">http://example.com?q=hoge&amp;p=fuga</code>と<code class="language-none">http://example.com#piyo</code>のケースでテストが失敗していることがわかりました．
+これは<code class="language-none">util.py</code>の<code class="language-none">is_url</code>関数の実装が間違っていることを示しています．</p>
+
+<h2 id="実装を修正する">実装を修正する</h2>
+
+<p>通らないケースを見ると<code class="language-none">http://</code>で始まっている点で共通していることがわかります．
+実装をみると</p>
+<pre><code class="language-python">r'^https://[0-9a-zA-Z/:%$&amp;()~.=+\-_]+$'
+</code></pre>
+<p>となっており，<code class="language-none">https://</code>で始まるものしか通らないようになっています．
+正規表現が間違っていることがわかったので以下のように修正します．</p>
+<pre><code class="language-python">r'^https?://[0-9a-zA-Z/:%$&amp;()~.=+\-_]+$'
+</code></pre>
+<p>すると，テストの実行結果は以下のようになります．</p>
+<pre><code class="language-Markup">======================================================================
+FAIL: test_is_url (test.test_util.UtilTest) (string='http://example.com?q=hoge&amp;p=fuga')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "${PROJECT_ROOT}/test/test_util.py", line 19, in test_is_url
+    self.assertTrue(util.is_url(case))
+AssertionError: None is not true
+
+======================================================================
+FAIL: test_is_url (test.test_util.UtilTest) (string='http://example.com#piyo')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "${PROJECT_ROOT}/test/test_util.py", line 19, in test_is_url
+    self.assertTrue(util.is_url(case))
+AssertionError: None is not true
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=2)
+</code></pre>
+<p>まだ，実装が間違っているようなので，失敗したケースを見ると<code class="language-none">?</code>と<code class="language-none">#</code>が入ってるものが失敗していると予想できます．
+そこで，正規表現を以下のように修正します．</p>
+<pre><code class="language-python">r'^https?://[0-9a-zA-Z/:%$&amp;()~.=+\-_?#]+$'
+</code></pre>
+<p>すると，テストの実行結果は以下のようになります．</p>
+<pre><code class="language-Markup">.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+</code></pre>
+<p>すべてのテストが通ったので<code class="language-none">is_url</code>関数は正しく実装されている可能性が高いということができます．</p>
+
+<h1 id="まとめ">まとめ</h1>
+<ul>
+  <li>ユニットテストを書こう</li>
+  <li>unittest.subTestを使おう</li>
+</ul>
+
+<h1 id="参考">参考</h1>
+<ul>
+  <li>Python標準ライブラリ
+    <ul>
+      <li><a href="https://docs.python.jp/3/library/re.html">re</a></li>
+      <li><a href="https://docs.python.jp/3/library/unittest.html">unittest</a></li>
+      <li><a href="https://docs.python.jp/3/library/typing.html">typing</a></li>
+    </ul>
+  </li>
+  <li><a href="https://github.com/nimiusrd/python-test">今回の記事のソースコード</a></li>
+</ul>
+
+  </div>
+  <footer class="post--footer">
+    posted at <time>2017-06-26 19:35:33</time>
+  </footer>
+</article>
+    </main>
+    <footer class="footer util--flexItem util--zindex__0 util--background__primaryColor500">
+  <p><small>Copyright © 2016-2019 YNUWAIWAI ALL Rights Reserved.</small></p>
+</footer>
+
+  </div>
+</body>
+</html>
